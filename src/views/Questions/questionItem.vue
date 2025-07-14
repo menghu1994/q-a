@@ -1,7 +1,7 @@
 <template>
 	<div class="flex flex-col gap-2">
 		<div class="w-full">
-			<p v-if="props.type" class="float-left mr-2 text-rose-800">[ {{ getType }} ]</p>
+			<p v-if="props.type" class="float-left mr-2 text-rose-800 cursor-pointer" @click="onFilter(props.type)">[ {{ getType }} ]</p>
 			<p class="">{{ props.question }}</p>
 		</div>
 		<div class="flex justify-end gap-2">
@@ -23,6 +23,10 @@ const props = defineProps({
 })
 
 const getType = computed(() => props.type.toLocaleLowerCase())
+
+const onFilter = (type: string) => {
+
+}
 </script>
 
 <style lang="scss"></style>
