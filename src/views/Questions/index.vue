@@ -5,7 +5,7 @@
 				<Question :question="q.question" :type="q.type"></Question>
 			</li>
 		</ul>
-		<Editor :text="'1234s'"></Editor>
+		<!-- <Editor></Editor> -->
 	</div>
 </template>
 
@@ -13,12 +13,9 @@
 import { ref } from "vue";
 import Question from "./questionItem.vue";
 import Editor from "@/components/editor.vue";
+import { Questions } from "./mock";
 
-const questions = ref<any>([
-	{ question: '如何实现垂直居中？', type: 'css', fav: 10, unFav: -1 },
-	{ question: 'Vue 3 的 Composition API 如何使用？Composition API 如何使用Composition API 如何使用Composition API 如何使用', type: 'vue', fav: 15, unFav: -2 },
-	{ question: 'TypeScript 接口和类型的区别', type: 'typescript', fav: 8, unFav: 0 },
-])
+const questions = ref<any>(Questions)
 </script>
 
 <style lang="scss">
@@ -44,7 +41,6 @@ const questions = ref<any>([
 
 			&:hover {
 				transform: translateY(-2px);
-				box-shadow: 0 4px 16px #0000001f;
 				background: linear-gradient(135deg, #f1f3f4, #e2e6ea);
 				color: #18794e;
 			}
